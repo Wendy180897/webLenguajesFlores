@@ -1,0 +1,562 @@
+/*------------------------------
+Características básicas
+------------------------------*/
+
+* {
+/* padding =relleno
+border=borde
+margin=margen
+background =fondo
+font-family=cambio de fuente
+width=anchura
+height=altura
+font-weight: bold;  -->  letra negrita
+list-style: none; --> sin viñeta
+ESTO ES PARA INSERTAR/AGREGAR UNA FUENTA GUARDADA EN UNA CARPETA(INDEPENDIENTE) Y DESPUÉS HABRÍA QUE AÑADIRLA CON EL FONT-FAMILY Y
+DAR EL NOMBRE DADO
+@font-face {
+  font-family:nombreDado;
+  src: url(../);
+}
+overflow: auto;/* esto es para que salga la barra 
+background-attachment:local; para que el fonde se mueva igual que el texto*/	padding: 0px;
+	margin: 0px;
+	/*padding y margen de 0px*/
+}
+@media screen and (max-width: 780px) and ( orientation:portrait){
+	#content{
+		display: block;
+	}
+	#mainContent{
+		display: block;
+		width:915px;
+		border-radius: 22px;
+	}
+	aside{
+		display: block;
+		width: 940px;
+		background-size: contain;
+		border-radius: 22px;
+		}
+    aside section{
+		display: inline-block;
+		width: 240px;
+		vertical-align: top;
+	}
+
+}
+
+header, footer, section, aside, nav, article {
+	display: block;
+	/* Definimos los elementos de estructura para que se visualicen como elementos de bloque */
+}
+
+body {
+	margin:0px auto ;
+	padding:22px 0px;
+	width:940px;
+	background:#F0F0F0;
+	font-family:Helvetica, Arial, sans-serif;
+	font-size:13px;
+	background-image: linear-gradient(yellowgreen,forestgreen,limegreen);
+	/* margen superior/inferior de 0px y derecho/izquierdo automático 
+	padding superior/inferior de 22px y derecho/izquierdo 0px 
+	ancho 940px
+	Color de fondo hexadecimal F0F0F0
+	Tipos de letra Helvetica, Arial, sans-serif de 13px
+	Gradiente de color lineal hacia arriba, colores forestgreen, limegreen, yellowgreen (el más oscuro abajo)
+	*/
+	
+	
+}
+
+h1, h2 {
+	font-size: 28px;
+	padding: 22px 0px;
+	line-height: 44px;
+	color:#003300 ;
+	/*Tamaño de letra 28px
+	padding superior/inferior de 22px y derecho/izquierdo 0px 
+	interlineado de 44px
+	color de texto 003300*/
+	
+}
+@font-face {
+	font-family:Flores;
+	src: url(../fonts/FloralSuave-Regular.ttf);
+  }
+h1{
+	font-family: Flores;
+	font-size: 40px;
+	/*tipografía propia dada
+	tamaño de letra 40px*/
+	
+}
+
+h3 {
+	font-size: 18px;
+	padding: 11px 0px;
+	line-height: 22px;
+	/*Tamaño de letra 18px
+	padding superior/inferior de 11px y derecho/izquierdo 0px 
+	interlineado de 22px*/
+
+}
+
+p {
+	padding-bottom: 22px;
+	/*
+	padding inferior de 22px 
+	*/
+	
+}
+
+
+
+/*------------------------------
+Elemento nav
+------------------------------*/
+
+nav {
+	position: absolute;
+	left: 0px;
+	right: 0px;
+background-image: url(../images/nav_background.png);
+	/*Posición absoluta a 0px de la izquierda y de la derecha
+	imagen de fondo nav_background.png*/
+	
+	
+}
+
+
+	nav ul {
+		margin: 0px auto;
+		width: 940px;
+		overflow: hidden;
+		text-decoration: none;
+		list-style: none;
+		/*margen superior/inferior de 0px y derecho/izquierdo automático
+		ancho 940px
+		Sin viñeta en los elementos de lista
+		overflow oculto*/
+		
+	}
+
+		nav ul li {
+			float: left;
+			margin: 0px 8px;
+			/*elementos flotantes hacia la izquierda
+			márgenes sup/inf 0px e izq/der 8px*/
+		}
+		
+			nav ul li a {
+				display: block;
+				margin-right: 20px;
+				width:140px;
+				line-height: 44px;
+				font-size: 14px;
+				text-align:center;
+			
+				text-decoration:none;
+				color:#777777;
+
+				/*Deben visualizarse como elementos de bloque
+				margen  derecho de 20px
+				ancho 140px
+				tamaño de letra 14px
+				interlineado de 44px
+				Alineacion de párrafo centrado
+				Sín línea inferior que indique que es un hiperenlace
+				color del texto hexadecimal 777777*/
+				
+			}
+			
+				nav ul li a:hover {
+					color: rgba(70,215,18,0.8);
+					font-size: 150%;
+					transition-timing-function:cubic-bezier(0, 0.43, 0.27, 1.55);
+					transition-duration:2s,700ms;
+					/*
+					color del texto 70,215,18 rgb con alpha de 0.8*/
+				}
+			
+			nav ul li.selected a {
+				color:#ffffff;
+				/*
+				color del texto hexadecimal ffffff*/
+				
+			}
+			
+			nav ul li.suscripcion a {
+				margin-left: 22px;
+				padding-left: 33px;
+                text-align: left;
+				background-image: url(../images/rss.png);
+                background-repeat: no-repeat;
+                background-position: left center;
+				/*
+				margen izquierdo de 22px
+				padding izquierdo de 33px
+				Alineación de párrafo izquierda
+				imagen de fondo rss.png sin repetición situada a la izquierda y el centro*/
+				
+			}
+
+
+
+/*------------------------------
+Introducción
+------------------------------*/
+
+#intro {
+	position: relative;
+	margin-top: 66px;
+padding: 44px;
+background-image: url(../images/intro_background.png);
+background-repeat: repeat-x;
+border-radius: 22px;	/*
+	
+	posición relativa
+	margen superior de 66px
+	padding de 44px
+	color de fondo hexadecimal 467612
+	imagen de fondo intro_background.png con repetición en el eje x
+	El borde redondeado debe tener un radio de 22px */
+		
+	background-size: 100%;
+}
+
+	#intro h2, #intro p {
+		position: relative;
+		width: 336px;
+		z-index:1;
+		/*
+				posición relativa
+				ancho de 336px 
+				posición de las cajas muy alta en el eje Z*/
+		
+	}
+	
+	#intro h2 {
+		padding-bottom: 22px;
+		padding-left: 0px;
+		padding-top: 0px;
+		padding-right: 0px;
+		color:#ffffff;
+		font-weight: normal;
+		/*
+			padding de 22px en la parte inferior y de 0 en el resto
+			color de texto hexadecimal ffffff
+			grosor de letra normal */
+		
+	}
+	
+	#intro p {
+		padding: 0px;
+		color:#d9f499;
+		/*
+		padding de 0px
+		color de texto hexadecimal d9f499
+		*/
+		
+	}
+	
+	#intro img {
+		position: absolute;
+		top: 0px;
+		right: 0px;
+		width: 653px;
+		height:100%;
+		border-radius: 22px;
+		/*
+		posición absoluta a 0px del borde superior y a 0px del borde derecho
+		ancho 653px
+		alto del 100%
+		El borde redondeado debe tener un radio de 22px*/
+	}
+
+
+
+/*------------------------------
+área principal y barra lateral
+------------------------------*/
+
+#content {
+	display: table;
+	/*debe visualizarse como tabla*/
+}
+
+	#mainContent {
+		display:table-cell;
+		width: 620px;
+		padding-right: 22px;
+		padding-left: 5px;
+		
+		background-color:lightgrey;
+		border-radius:22px 0px 0px ;
+		/*debe visualizarse como celda de tabla
+		ancho 620px
+		padding derecho de 22px e izquierdo de 5px
+		borde superior izquierdo redondeado 22px
+		color de fondo lightgrey*/
+		
+		
+	}
+
+	
+	aside {
+		display: table-cell;
+		width: 620px;
+		background-image: url(../images/sidebar_background.png);
+         border-radius: 0px 22px 0px 0px;
+		/*debe visualizarse como celda de tabla
+		ancho 620px
+		imagen de fondo sidebar_background.png
+		borde superior derecho redondeado 22px*/
+		
+	}
+
+
+
+/*------------------------------
+Artículos del blog
+------------------------------*/
+.blogPost header p, .blogPost header p a {
+	font-size: 14px;
+	font-family: cursive;
+	color:#777777;
+	/*
+	tamaño del texto 14px
+	cursiva
+	color del texto hexadecimal 777777 */
+		
+}
+	
+	.blogPost header p a:hover {
+		text-decoration: none;
+		color:#000000;
+		/*
+		Sin línea  inferior que indique que es un hiperenlace
+		color del texto hexadecimal 000000*/
+		
+	}
+
+.blogPost div {
+column-count: 2;
+column-gap: 22px;
+	/* 
+		División del texto en dos columnas
+		Separación entre columnas 22px
+	*/
+	
+}
+	
+.blogPost img {
+	margin:22px 0px;
+	text-shadow:3px 3px 7px #777777 ;
+	
+	/* margen superior/inferior de 22px y derecho/izquierdo 0px
+	sombra de color hexadecimal 777777 de desplazamiento 3px horizontal, 3px vertical y difuminado de 7px 
+	*/
+	
+}
+
+
+
+/*------------------------------
+Comentarios
+------------------------------*/
+
+#comments {
+	margin-top: 21px;
+	padding-top: 22px;
+	border-top: 1px solid #d7d7d7; 
+	/* margen superior de 21px  
+	padding superior de 22px  
+	borde superior de 1px solido color hexadecimal d7d7d7
+	*/
+	
+}
+
+	#comments article {
+		display: table;
+		padding: 22px;
+		/* debe visualizarse como tabla
+		padding de 22px  
+		 
+		*/
+		
+	}
+	
+	#comments article:nth-child(odd) {
+		padding: 21px;
+		background-color: #e3e3e3;
+		border: 1px solid #d7d7d7;
+		border-radius: 11px;
+		/* padding de 21px 
+		Color de fondo hexadecimal e3e3e3
+		borde de 1px solido color hexadecimal d7d7d7 
+		El borde redondeado debe tener un radio de 11px
+		*/
+	}
+	
+		#comments article header {
+			display: table-cell;
+			width: 220px;
+			padding-right: 22px;
+			/* deben visualizarse como celdas de tabla
+			ancho de 220px  
+			padding derecho de 22px  
+			*/
+			
+		}
+		
+			#comments article header a {
+				display: block;
+				font-weight: bold;
+				/*
+				Se visualizará como elemento de bloque
+				Negrita
+				color hexadecimal 000000
+				*/
+		
+			}
+			
+				#comments article header a:hover {
+				text-decoration: none;
+					/*Sin línea  inferior que indique que es un hiperenlace*/
+					
+				}
+		
+		#comments article p {
+			padding: 0px;
+			/* padding de 0*/
+		
+		}
+
+
+/*------------------------------
+Barra lateral
+------------------------------*/
+aside section {
+	margin:22px 0px 0px 22px;
+	padding: 11px 22px;
+	background-image: url(../images/sidebar_section_background.png);
+	background-repeat: repeat-x;
+	border-radius: 11px;
+	/* margen superior de 22px, derecho 0px, inferior de 0px e izquierdo de 22px
+	padding superior/inferior de 11px y derecho/izquierdo 22px
+	imagen de fondo que se repite en el eje x: sidebar_section_background.png
+	el borde redondeado tiene radio de 11px 
+	*/
+	
+}
+
+	aside section ul {
+		margin-left: 22px;
+		margin-top: 0px;
+		margin-bottom: 0px;
+		margin-right: 0px;
+		list-style: none;
+
+		/* margen izquierdo de 22px, el resto 0px
+		los elementos de lista no deben tener viñeta */
+	}
+	
+		aside section ul li a {
+			display: block;
+			text-decoration: none;
+			color: #000000;
+			/*Se visualizará como elemento de bloque
+			Sin línea inferior que indique que es un hiperenlace
+			color del texto hexadecimal 000000*/
+			
+		}
+		
+			aside section ul li a:hover {
+				text-decoration:underline;
+				/*Con línea inferior que indique que es un hiperenlace*/
+				
+			}
+
+
+
+/*------------------------------
+Pie
+------------------------------*/
+footer {
+	position: absolute;
+	left: 0px;
+	right:0px;
+	width: 100px;
+	color: #003300;
+	/*posición absoluta a 0px del borde izquierdo y del derecho
+	ancho 100%
+	color de fondo hexadecimal 003300*/
+	
+}
+
+	footer div {
+		display: table;
+		margin: 0px auto;
+		padding: 44px 0px;
+		width: 940px;
+		color: #777777;
+		/*Debe visualizarse como tabla
+		margen superior/inferior de 0px y derecho/izquierdo automático
+		padding superior/inferior de 44px y derecho/izquierdo de 0px
+		ancho 940px
+		color del texto hexadecimal 777777*/
+		
+	}
+	
+		footer div section {
+			display: table-cell;
+			width: 300px;			
+			/*deben visualizarse como celdas de tabla
+			ancho de 300px*/
+			
+		}
+		
+		footer div #about, footer div #blogroll {
+			padding-right: 20px;
+			/*padding derecho de 20px*/
+			
+		}
+		
+	footer h3 {
+		color: #ffffff;
+		/* color de texto ffffff */
+		
+	}
+	
+	footer a {
+		color: #999999;
+		/* color de texto 999999 */ 
+	}
+	
+		footer a:hover {
+			color: rgba(170,215,18, 0.8);
+			text-decoration: none;
+			/* color de texto 170,215,18 en notacion rgb con alpha de 0.8
+			Sin línea inferior que indique que es un hiperenlace*/
+		}
+		
+	footer ul {
+		margin-left: 40px;
+		margin-top: 0px;
+		margin-bottom: 0px;
+		margin-right: 0px;
+		color: #565656;
+		/* margen izquierdo de 40px el resto debe ser 0
+		la viñeta de los elementos de lista debe ser un cuadrado
+		color del texto 565656 
+		*/
+	
+	}
+	
+		footer ul li a {
+			display: block;
+			/*se debe visualizar como elemento de bloque*/
+			
+		}
